@@ -895,17 +895,18 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
 .trilogy-books { display: flex; gap: 1rem; }
 .trilogy-book {
   position:relative;
-
   overflow:hidden;
-
   border-radius:18px;
-
   aspect-ratio:2/3;
-
   cursor:pointer;
-
   box-shadow:
     0 15px 40px rgba(0,0,0,.15);
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.trilogy-book:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 50px rgba(0,0,0,.25);
 }
 .trilogy-book img{
   width:100%;
@@ -2258,7 +2259,7 @@ textarea.form-control { resize: vertical; min-height: 140px; }
         <div>
           <div class="footer-col-title">Books</div>
           <ul class="footer-links">
-            <li><a href="#" onclick="showPage('books')">Work Well, or Don't Bother</a></li>
+            <li><a href="#" onclick="openBook('work-well')">Work Well, or Don't Bother</a></li>
             <li><a href="#" onclick="showPage('books')">Fiction Trilogy</a></li>
             <li><a href="#" onclick="showPage('books')">Leadership Books</a></li>
             <li><a href="#" onclick="showPage('books')">Personal Development</a></li>
@@ -2427,7 +2428,7 @@ textarea.form-control { resize: vertical; min-height: 140px; }
         <div>
           <div class="footer-col-title">Books</div>
           <ul class="footer-links">
-            <li><a href="#" onclick="showPage('books')">Work Well, or Don't Bother</a></li>
+            <li><a href="#" onclick="openBook('work-well')">Work Well, or Don't Bother</a></li>
             <li><a href="#" onclick="showPage('books')">Fiction Trilogy</a></li>
             <li><a href="#" onclick="showPage('books')">Leadership Books</a></li>
             <li><a href="#" onclick="showPage('books')">Personal Development</a></li>
@@ -2630,7 +2631,7 @@ textarea.form-control { resize: vertical; min-height: 140px; }
         <div>
           <div class="footer-col-title">Books</div>
           <ul class="footer-links">
-            <li><a href="#" onclick="showPage('books')">Work Well, or Don't Bother</a></li>
+            <li><a href="#" onclick="openBook('work-well')">Work Well, or Don't Bother</a></li>
             <li><a href="#" onclick="showPage('books')">Fiction Trilogy</a></li>
             <li><a href="#" onclick="showPage('books')">Leadership Books</a></li>
             <li><a href="#" onclick="showPage('books')">Personal Development</a></li>
@@ -2678,12 +2679,12 @@ textarea.form-control { resize: vertical; min-height: 140px; }
           <div class="trilogy-badge">New · Fiction Trilogy</div>
           <div style="font-family:var(--font-display);font-size:2.5rem;font-style:italic;color:var(--white);line-height:1.1;margin-bottom:1rem;">Truth.<br/>Power.<br/>Redemption.</div>
           <p style="font-size:.84rem;color:rgba(255,255,255,.55);line-height:1.8;margin-bottom:1.5rem;">Three novels. One powerful message. Terry Mante's debut fiction trilogy explores what happens when human ambition meets ethical compromise — from political deception to spiritual courage and personal redemption.</p>
-          <a href="#" class="btn-primary" style="font-size:.72rem;">Get the Trilogy →</a>
+          <a href="#" onclick="showPage('books');setTimeout(function(){document.querySelector('[data-filter=&quot;fiction&quot;]').click()},100)" class="btn-primary" style="font-size:.72rem;">Get the Trilogy →</a>
         </div>
         <div>
           <div class="trilogy-books">
 
-          <div class="trilogy-book">
+          <div class="trilogy-book" onclick="openBook('candidate')">
             <img
               src="images/books/Thus-Saith-The-Candidate-Front-Cover.jpg"
               alt="Thus Saith the Candidate"
@@ -2700,7 +2701,7 @@ textarea.form-control { resize: vertical; min-height: 140px; }
             </div>
           </div>
 
-          <div class="trilogy-book">
+          <div class="trilogy-book" onclick="openBook('underground-reformers')">
             <img
               src="images/books/The-Underground-Reformers-FRONT-Cover_TM.jpg"
               alt="The Underground Reformers"
@@ -2717,7 +2718,7 @@ textarea.form-control { resize: vertical; min-height: 140px; }
             </div>
           </div>
 
-          <div class="trilogy-book">
+          <div class="trilogy-book" onclick="openBook('shifting-sands')">
             <img
               src="images/books/Shifting-Sands-FRONT-Cover_TM_revised.jpg"
               alt="Shifting Sands: A Tycoon's Redemption"
@@ -2962,7 +2963,7 @@ textarea.form-control { resize: vertical; min-height: 140px; }
         <div>
           <div class="footer-col-title">Books</div>
           <ul class="footer-links">
-            <li><a href="#" onclick="showPage('books')">Work Well, or Don't Bother</a></li>
+            <li><a href="#" onclick="openBook('work-well')">Work Well, or Don't Bother</a></li>
             <li><a href="#" onclick="showPage('books')">Fiction Trilogy</a></li>
             <li><a href="#" onclick="showPage('books')">Leadership Books</a></li>
             <li><a href="#" onclick="showPage('books')">Personal Development</a></li>
@@ -3193,7 +3194,7 @@ textarea.form-control { resize: vertical; min-height: 140px; }
         <div>
           <div class="footer-col-title">Books</div>
           <ul class="footer-links">
-            <li><a href="#" onclick="showPage('books')">Work Well, or Don't Bother</a></li>
+            <li><a href="#" onclick="openBook('work-well')">Work Well, or Don't Bother</a></li>
             <li><a href="#" onclick="showPage('books')">Fiction Trilogy</a></li>
             <li><a href="#" onclick="showPage('books')">Leadership Books</a></li>
             <li><a href="#" onclick="showPage('books')">Personal Development</a></li>
@@ -3324,7 +3325,7 @@ textarea.form-control { resize: vertical; min-height: 140px; }
         <div>
           <div class="footer-col-title">Books</div>
           <ul class="footer-links">
-            <li><a href="#" onclick="showPage('books')">Work Well, or Don't Bother</a></li>
+            <li><a href="#" onclick="openBook('work-well')">Work Well, or Don't Bother</a></li>
             <li><a href="#" onclick="showPage('books')">Fiction Trilogy</a></li>
             <li><a href="#" onclick="showPage('books')">Leadership Books</a></li>
             <li><a href="#" onclick="showPage('books')">Personal Development</a></li>
@@ -3498,7 +3499,7 @@ textarea.form-control { resize: vertical; min-height: 140px; }
         <div>
           <div class="footer-col-title">Books</div>
           <ul class="footer-links">
-            <li><a href="#" onclick="showPage('books')">Work Well, or Don't Bother</a></li>
+            <li><a href="#" onclick="openBook('work-well')">Work Well, or Don't Bother</a></li>
             <li><a href="#" onclick="showPage('books')">Fiction Trilogy</a></li>
             <li><a href="#" onclick="showPage('books')">Leadership Books</a></li>
             <li><a href="#" onclick="showPage('books')">Personal Development</a></li>
@@ -3658,7 +3659,7 @@ textarea.form-control { resize: vertical; min-height: 140px; }
         <div>
           <div class="footer-col-title">Books</div>
           <ul class="footer-links">
-            <li><a href="#" onclick="showPage('books')">Work Well, or Don't Bother</a></li>
+            <li><a href="#" onclick="openBook('work-well')">Work Well, or Don't Bother</a></li>
             <li><a href="#" onclick="showPage('books')">Fiction Trilogy</a></li>
             <li><a href="#" onclick="showPage('books')">Leadership Books</a></li>
             <li><a href="#" onclick="showPage('books')">Personal Development</a></li>
@@ -3903,7 +3904,7 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
         <div>
           <div class="footer-col-title">Books</div>
           <ul class="footer-links">
-            <li><a href="#" onclick="showPage('books')">Work Well, or Don't Bother</a></li>
+            <li><a href="#" onclick="openBook('work-well')">Work Well, or Don't Bother</a></li>
             <li><a href="#" onclick="showPage('books')">Fiction Trilogy</a></li>
             <li><a href="#" onclick="showPage('books')">Leadership Books</a></li>
             <li><a href="#" onclick="showPage('books')">Personal Development</a></li>
